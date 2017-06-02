@@ -37,15 +37,3 @@ function updateDocument(callback) {
         callback();
     });
 }
-
-function getDocumentById(callback) {
-    db.getDocumentById("592d448ca593110879999de5", function (err, document) {
-        if (err) {
-            console.log(err);
-            callback();
-        }
-        console.log(document);
-        callback();
-    });
-}
-
