@@ -16,9 +16,6 @@ module.exports = {
     },
     updateDocument(id, json, callback) {
         updateDocument(id, json, callback);
-    },
-    getDocumentById: function (id, callback) {
-        getDocumentById(id, callback);
     }
 };
 
@@ -57,33 +54,6 @@ function addDocument(json, callback) {
                 }
                 else {
                     callback(null, "Document created with id: " + result.insertedId);
-                }
-            });
-        } catch (ex) {
-            callback(`An exception occurred: ${ex}`, null);
-        }
-    });
-}
-
-function getDocumentById(id, callback) {
-    connectToDatabase(function (err) {
-        if (err || !cachedDb.serverConfig.isConnected) {
-            err = err || "Could not connect to database";
-            callback(err);
-            return;
-        }
-
-        try {
-            cachedDb.collection('Sessions').findOne({ _id: ObjectId(id) }, function (err, result) {
-                if (err !== null) {
-                    callback(`An error occurred: ${err}`, result);
-                }
-                else {
-                    if (result === null) {
-                        callback("Document not found", null);
-                        return;
-                    }
-                    callback(null, result);
                 }
             });
         } catch (ex) {
