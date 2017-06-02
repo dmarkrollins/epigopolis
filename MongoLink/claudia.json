@@ -1,0 +1,7 @@
+{
+  "lambda": {
+    "role": "mongolink-executor",
+    "name": "mongolink",
+    "region": "us-east-1"
+  }
+}
