@@ -1,5 +1,5 @@
 {
-    "name": "EdmundsTMV",
+    "name": "EdmundsAPI",
     "version": "1.0.0",
     "description": "Shell api app - assumes your .aws/credentials file has a [claudia] section defined",
     "main": "app.js",
