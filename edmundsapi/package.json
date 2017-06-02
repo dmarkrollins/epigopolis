@@ -1,0 +1,14 @@
+{
+  "name": "edmundsapi",
+  "version": "1.0.0",
+  "description": "Get true market value of auto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-edmunds-api": "0.0.1"
+  }
+}
