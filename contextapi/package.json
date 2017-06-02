@@ -1,17 +1,13 @@
 {
-  "name": "contextapi",
-  "version": "1.0.0",
-  "description": "Handles context from different channels",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "create": "claudia create --region us-east-1 --handler index.handler --profile claudia",
-    "deploy": "claudia update --region us-east-1 --profile claudia"
-  },
-  "author": "Don Ross",
-  "license": "ISC",
-  "dependencies": {
-    "aws-sdk": "^2.59.0",
-    "eslint": "^3.19.0"
-  }
+    "name": "ContextAPI",
+    "version": "1.0.0",
+    "description": "Handles context from different channels",
+    "main": "index.js",
+    "scripts": {},
+    "author": "Don Ross",
+    "license": "ISC",
+    "dependencies": {
+        "aws-sdk": "^2.59.0",
+        "eslint": "^3.19.0"
+    }
 }

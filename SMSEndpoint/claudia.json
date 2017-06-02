@@ -1,11 +1,11 @@
 {
   "lambda": {
-    "role": "TwilioSMS-executor",
-    "name": "TwilioSMS",
+    "role": "SMSEndpoint-executor",
+    "name": "SMSEndpoint",
     "region": "us-east-1"
   },
   "api": {
-    "id": "qhrnlww3n5",
+    "id": "8jrw7w0d7e",
     "module": "index"
   }
 }

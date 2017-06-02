@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/dmarkrollins/epigopolis/issues"
   },
-  "homepage": "https://github.com/dmarkrollins/epigopolis#readme"
+  "homepage": "https://github.com/dmarkrollins/epigopolis#readme",
+  "dependencies": {
+    "aws-sdk": "^2.62.0"
+  }
 }

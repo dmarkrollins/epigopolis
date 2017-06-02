@@ -1,7 +1,0 @@
-{
-  "lambda": {
-    "role": "contextapi-executor",
-    "name": "contextapi",
-    "region": "us-east-1"
-  }
-}
