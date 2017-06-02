@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "TwilioSMS-executor",
+    "name": "TwilioSMS",
+    "region": "us-east-1"
+  },
+  "api": {
+    "id": "qhrnlww3n5",
+    "module": "index"
+  }
+}

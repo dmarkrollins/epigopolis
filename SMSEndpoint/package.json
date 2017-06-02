@@ -4,8 +4,8 @@
     "description": "Epigopolis SMS endpoint",
     "main": "app.js",
     "scripts": {
-        "create": "claudia create --region us-east-1 --api-module index --profile claudia",
-        "update": "claudia update --profile claudia"
+        "create": "claudia create --region us-east-1 --api-module index --configure-twilio-sms-bot --profile claudia2",
+        "update": "claudia update --profile claudia2"
     },
     "author": "",
     "license": "ISC",
