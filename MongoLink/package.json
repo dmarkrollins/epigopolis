@@ -1,0 +1,17 @@
+{
+  "name": "mongolink",
+  "version": "1.0.0",
+  "description": "Mongo Database client to read/write documents",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create": "claudia create --region us-east-1 --handler index.handler --profile claudia",
+    "deploy": "claudia update --region us-east-1 --profile claudia",
+    "lambda-local": "lambda-local -l index.js -e eventdata.js -E '{\"MONGODB_ATLAS_CLUSTER_URI\":\"mongodb://chatbot_user:qwerty123@ds155631.mlab.com:55631/chatbot\"}'"
+  },
+  "author": "Don Ross",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^2.2.27"
+  }
+}
