@@ -13,9 +13,10 @@ function processEvent(event, context, callback) {
     try {
         switch (event.transaction) {
             case "read":
-                db.queryDocument(JSON.parse(event.data), function (err, document) {
+                var query = { "contextId": event.contextId };
+                db.queryDocument(query, function (err, document) {
                     console.log(document);
-                            console.log(err);
+                    console.log(err);
                     callback(err, document);
                 });
                 break;
