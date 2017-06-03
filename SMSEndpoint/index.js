@@ -54,7 +54,6 @@ module.exports = botBuilder(function(message) {
         });
     } catch (err) {
         console.log(err);
-        //TODO Handle error
     }
 
     // promiseInvoke(payload).resolve().then(function(result) {
