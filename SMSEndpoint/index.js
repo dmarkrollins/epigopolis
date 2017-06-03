@@ -2,24 +2,19 @@
 
 const AWS = require('aws-sdk');
 const botBuilder = require('claudia-bot-builder');
-const sync = require('synchronize');
-
-const fiber = sync.fiber;
-const sawait = sync.await;
-const defer = sync.defer;
 
 const lambda = new AWS.Lambda({ region: 'us-east-1' });
 
 // function callLamba(payload) {
-const promiseInvoke = ({ functionName, payload }) => {
-    console.log('Starting promiseInvoke with native promise');
-    return lambda.invoke({
-        InvocationType: 'Event',
-        FunctionName: functionName,
-        LogType: 'None',
-        Payload: JSON.stringify(payload)
-    }).promise();
-};
+// const promiseInvoke = ({ functionName, payload }) => {
+//     console.log('Starting promiseInvoke with native promise');
+//     return lambda.invoke({
+//         InvocationType: 'Event',
+//         FunctionName: functionName,
+//         LogType: 'None',
+//         Payload: JSON.stringify(payload)
+//     }).promise();
+// };
 
 // const promiseInvoke6 = ({ functionName, payload }) => new Promise(resolve => {
 //   console.log(`Starting promiseInvoke InvokeAsync without callback - ${functionName}`);
@@ -33,6 +28,7 @@ const promiseInvoke = ({ functionName, payload }) => {
 
 
 // SMS entry point
+
 module.exports = botBuilder(function(message) {
 
     console.log('Incoming message', JSON.stringify(message));
@@ -54,43 +50,59 @@ module.exports = botBuilder(function(message) {
         });
     } catch (err) {
         console.log(err);
-    }
 
-    // promiseInvoke(payload).resolve().then(function(result) {
-    //     console.log(result);
-    //     return JSON.stringify(result);
-    // }).catch(function(err) {
-    //     console.log(err);
-    //     return 'error occurred';
-    // });
+// module.exports = botBuilder(function (message) {
 
-    // console.log('done with promise');
+//     console.log('Incoming message', JSON.stringify(message));
 
-    // console.log(retval);
+//     const data = {};
+//     data.message = message.text;
+//     data.userId = message.sender;
 
-    // return retval;
+//     const payload = {
+//         functionName: 'ContextAPI',
+//         payload: JSON.stringify(data, null, 2)
+//     };
 
-    // const lambdaPromise = lambda.invoke(payload).promise();
+//     lambda.invoke(payload);
 
-    // lambdaPromise.then(function(retval) {
-    //     return 'success';
-    // }).catch(function(err) {
-    //     return 'error';
-    // });
+//     return message;
 
-    // lambda.invoke(payload, function(err, result) {
-    //     console.log('hi there');
-    //     let retval;
-    //     if (err) {
-    //         console.log('result error', err);
-    //         retval = null;
-    //     } else {
-    //         retval = result;
-    //     }
-    //     console.log('Return Value', retval);
-    //     return retval || 'Something happened - check the logs';
-    // });
+//     // promiseInvoke(payload).resolve().then(function(result) {
+//     //     console.log(result);
+//     //     return JSON.stringify(result);
+//     // }).catch(function(err) {
+//     //     console.log(err);
+//     //     return 'error occurred';
+//     // });
 
-    //return 'This freakin better work';
+//     // console.log('done with promise');
 
-}, { platforms: ['twilio'] });
+//     // console.log(retval);
+
+//     // return retval;
+
+//     // const lambdaPromise = lambda.invoke(payload).promise();
+
+//     // lambdaPromise.then(function(retval) {
+//     //     return 'success';
+//     // }).catch(function(err) {
+//     //     return 'error';
+//     // });
+
+//     // lambda.invoke(payload, function(err, result) {
+//     //     console.log('hi there');
+//     //     let retval;
+//     //     if (err) {
+//     //         console.log('result error', err);
+//     //         retval = null;
+//     //     } else {
+//     //         retval = result;
+//     //     }
+//     //     console.log('Return Value', retval);
+//     //     return retval || 'Something happened - check the logs';
+//     // });
+
+//     //return 'This freakin better work';
+
+// }, { platforms: ['twilio'] });

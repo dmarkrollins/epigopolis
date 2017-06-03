@@ -25,14 +25,15 @@ function getPolicies() {
         "expirationDate": "10/13/2017",
         "limits": "100,000/300,000",
         "propertyDamage": "100,000 each accident",
-        "medicalPayments": "5,000 each person",
-        "uninsured": "100,000/300,000",
+        "medicalPayments": "$5,000 each person",
+        "uninsured": "$100,000/$300,000",
         "deductibles": [{
             "text": "Comp/Comprehensive",
-            "amount": "500"
+            "amount": "$500.00"
         },
         {
-            "Glass Deductible": "50"
+            "text": "Glass Deductible",
+            "amount": "$50.00"
         }
         ]
     }];
