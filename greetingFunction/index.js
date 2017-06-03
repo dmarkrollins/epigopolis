@@ -2,6 +2,52 @@
 
 const greeting = require('greeting');
 
+const Policy = {
+    "firstName": "John",
+    "lastName": "Smith",
+    "prefix": "Mr.",
+    "address": {
+        "street": "12 Main St.",
+        "cityStateZip": "Hartford, CT 06101"
+    },
+    "mobileNumber": "8601234567",
+    "effectiveDate": "10/23/2016",
+    "expirationDate": "10/13/2017",
+    "limits": "$100,000/$300,000",
+    "propertyDamage": "$100,000 each accident",
+    "medicalPayments": "$5,000 each person",
+    "uninsured": "$100,000/$300,000",
+    "vehicles": [{
+            "make": "Honda",
+            "model": "Accord",
+            "style": "Sport",
+            "year": "2012",
+            "deductibles": [{
+                "text": "Comp/Comprehensive",
+                "amount": "$700.00"
+            }, {
+                "text": "Glass Deductible",
+                "amount": "$50.00"
+            }],
+        },
+        {
+            "make": "Ford",
+            "model": "Fusion",
+            "style": "Titanium",
+            "year": "2014",
+            "deductibles": [{
+                    "text": "Comp/Comprehensive",
+                    "amount": "$500.00"
+                },
+                {
+                    "text": "Glass Deductible",
+                    "amount": "$50.00"
+                }
+            ],
+        }
+    ]
+};
+
 function elicitSlot(sessionAttributes, intentName, slots, slotToElicit, message, responseCard) {
     return {
         sessionAttributes,
@@ -79,7 +125,7 @@ function handleGreeting(intentRequest, callback) {
 
     callback(close(outputSessionAttributes, 'Fulfilled', {
         contentType: 'PlainText',
-        content: `Hey there... I can help you with your Travelers auto policy. What would you like help with? Say something like "my policy", "an accident", "my deductibles"`
+        content: `${randomGreeting} ${Policy.prefix} ${Policy.lastName}... what can I help you with? Say something like "my policy", "an accident", or "my deductibles"`
     }));
 
 }

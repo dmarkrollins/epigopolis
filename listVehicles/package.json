@@ -1,5 +1,5 @@
 {
-  "name": "coffeebotorder",
+  "name": "listvehicles",
   "version": "1.0.0",
   "description": "",
   "main": "botMain.js",
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "greeting": "^1.0.6"
+    "greeting": "^1.0.6",
+    "underscore": "^1.8.3"
   }
 }
