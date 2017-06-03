@@ -10,11 +10,3 @@ module.exports = {
         return conciergeData.getConciergeData(event);
     }
 };
-
-
-
-// var event = {};
-// event.mobileNumber = "8601234567";
-// console.log(policyData.getPolicy(event));
-
-// console.log(conciergeData.getConciergeData({}));
